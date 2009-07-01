@@ -1,5 +1,5 @@
-  	    def cons(nL, nI)
-	    consonant = %w(b c d f g h j k l m n p q r s t v w x z)
+    def cons(nL, nI)
+	    consonant = %w(b c d f g h j k l m n p q r s t v w x z sh ch th)
 	    if nL > 0
 	 	    print consonant[rand(consonant.length - 1) ]
 		    vowel(nL - 1, nI)
@@ -27,9 +27,13 @@
     end
     
     #Creates voucher by calling cons first
-	def generate_voucher(num_letters, num_integers)
-	    coder = "#{cons(num_letters, num_integers)}"
-	    return coder
+	def make_voucher_code(num_letters, num_integers)
+	    code = "#{cons(num_letters, num_integers)}"
+	    return code
     end
     
-    print(generate_voucher(4, 2))
+    n = 5
+    while n > 0
+       puts make_voucher_code(5, 3)
+       n = n - 1
+    end
